@@ -38,9 +38,7 @@ const Contact = (props) => {
           <i className="bi bi-trash-fill" style={{fontSize:"1rem"}}></i>
         </button>
       </div>
-      <button className="btn btn-secondary form-control">
-        {props.contact.name}
-      </button>
+      
     </div>
   );
 };
