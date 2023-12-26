@@ -1,8 +1,10 @@
-import React from 'react'
+
 
 const RemoveAllContact = () => {
   return (
-    <div>RemoveAllContact</div>
+    <div>
+        <button className="btn btn-danger form-control">Remove All</button>
+    </div>
   )
 }
 

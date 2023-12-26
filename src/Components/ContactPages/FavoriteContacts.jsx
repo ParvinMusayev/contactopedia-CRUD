@@ -1,9 +1,13 @@
-import React from 'react'
+import Contact from "./Contact";
 
-const FavoriteContacts = () => {
+const FavoriteContacts = (props) => {
   return (
-    <div>FavoriteContacts</div>
-  )
-}
+    <div>
+      {props.contacts.map((contact, index) => (
+        <Contact contact={contact} key={index}></Contact>
+      ))}
+    </div>
+  );
+};
 
-export default FavoriteContacts
+export default FavoriteContacts;
