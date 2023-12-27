@@ -89,8 +89,21 @@ class ContactIndex extends React.Component {
     this.setState((prevState) => {
       return {
         contactList: prevState.contactList.filter((obj) => {
-         return obj.id !== contactId
+          return obj.id !== contactId;
         }),
+      };
+    });
+  };
+
+  handleAddRandomContact = (newContact) => {
+    const newFinalContact = {
+      ...newContact,
+      id: this.state.contactList[this.state.contactList.length - 1].id + 1,
+      isFavorite: false,
+    };
+    this.setState((prevState) => {
+      return {
+        contactList: prevState.contactList.concat([newFinalContact]),
       };
     });
   };
@@ -101,10 +114,12 @@ class ContactIndex extends React.Component {
         <Header />
         <div className="container" style={{ minHeight: "85vh" }}>
           <div className="row py-3">
-            <div className="col-4 offset-2">
-              <AddRandomContact />
+            <div className="col-4 offset-2 row">
+              <AddRandomContact
+                handleAddRandomContact={this.handleAddRandomContact}
+              />
             </div>
-            <div className="col-4 ">
+            <div className="col-4 row">
               <RemoveAllContact />
             </div>
             <div className="row py-2">
